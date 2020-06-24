@@ -1,14 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript Calculadora de Saldo</title>
+    <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body>
-
+    <!--
+        Esta é uma tabela HTML com elementos <input> que permite ao usuário inserir dados e
+        elementos <span> nos quais o programa pode exibir seus resultados. Esses elementos têm
+        identificação com "interest" e "years". Essas identificações são usadas no código
+        JavaScript que vem em uma folha separada. Note que alguns dos elementos de entrada definem
+        rotinas de tratamento de evento "oncharge" ou "onclick". Elas especificam strings de código
+        JavaScript a ser executado quanndo o usuário insere dados ou dá um clique.
+    -->
+    <table>
+        <tr>
+            <th>Entre com a Data:</th>
+            <td></td>
+            <th>Saldo do Empréstimo, Patrimônio Acumulativo, e pagamentos interessados</th>
+        </tr>
+        <tr>
+            <td>Montante do Empréstimo ($):</td>
+            <td><input id="amount" onchange="calculate();"></td>
+            <td rowspan="8">
+                <canvas id="graph" width="400" height="250"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <td>Juros anual (%):</td>
+            <td><input id="apr" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td>Período de Reembolso(anos):</td>
+            <td><input id="years" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td>Código Postal (encontrar credores):</td>
+            <td><input id="zipcode" onchange="calculate();"></td>
+        </tr>
+        <tr>
+            <td>Pagamento Aproximado:</td>
+            <td><button onclick="calculate();">Calculadora</button></td>
+        </tr>
+        <tr>
+            <td>Pagamento Mensal:</td>
+            <td>$<span class="output" id="payment"></span></td>
+        </tr>
+        <tr>
+            <td>Pagamento Total:</td>
+            <td>$<span class="output" id="total"></span></td>
+        </tr>
+        <tr>
+            <td>Interesse Total:</td>
+            <td>$<span class="output" id="totalinterest"></span></td>
+        </tr>
+        <tr>
+            <th>Patrocinadores:</th>
+            <td colspan="2">
+                Solicitar seu empréstimo com um desses credores finos:
+                <div id="lenders"></div>
+            </td>
+        </tr>
+    </table>
+    <script src="libraty.js"></script>
 </body>
 
 </html>

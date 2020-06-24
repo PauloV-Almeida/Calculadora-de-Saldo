@@ -6,13 +6,13 @@
  */
 function calculate() {
     // Pesquisa os elementos de entrada e saída no documento
-    var amount = document.getElementById("amount");
+    var amount = document.getElementById("montante");
     var apr = document.getElementById("apr");
-    var years = document.getElementById("years");
-    var zipcode = document.getElementById("zipcode");
-    var payment = document.getElementById("payment");
+    var years = document.getElementById("anos");
+    var zipcode = document.getElementById("codigopostal");
+    var payment = document.getElementById("Fpagamento");
     var total = document.getElementById("total");
-    var totalinterest = document.getElementById("totalinterest");
+    var totalinterest = document.getElementById("totalinteresados");
 
     // Obtém a entrada do usuário através dos elementos de entrada. Presume que tudo isso 
     // é válido. 

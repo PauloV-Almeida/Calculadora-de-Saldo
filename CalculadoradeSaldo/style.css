@@ -28,3 +28,21 @@ th,
 td {
     vertical-align: top;
 }
+
+html,
+body {
+    height: 100%;
+    background: linear-gradient(black, gray);
+}
+
+table {
+    margin: 0 auto;
+    width: 75%;
+    height: 80%;
+    background-color: white;
+}
+
+.titulo h1 {
+    text-align: center;
+    color: white;
+}

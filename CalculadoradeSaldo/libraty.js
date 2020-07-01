@@ -6,13 +6,13 @@
  */
 function calculate() {
     // Pesquisa os elementos de entrada e saída no documento
-    var amount = document.getElementById("montante");
+    var amount = document.getElementById("amount");
     var apr = document.getElementById("apr");
-    var years = document.getElementById("anos");
-    var zipcode = document.getElementById("codigopostal");
-    var payment = document.getElementById("Fpagamento");
+    var years = document.getElementById("years");
+    var zipcode = document.getElementById("zipcode");
+    var payment = document.getElementById("payment");
     var total = document.getElementById("total");
-    var totalinterest = document.getElementById("totalinteresados");
+    var totalinterest = document.getElementById("totalinterest");
 
     // Obtém a entrada do usuário através dos elementos de entrada. Presume que tudo isso 
     // é válido. 
@@ -81,10 +81,10 @@ function save(amount, apr, years, zipcode) {
 window.onload = function() {
     // Se o navegador suportar localStorage e temos alguns dados armazenados
     if (window.localStorage && localStorage.loan_amount) {
-        document.getElementById("montante").value = localStorage.loan_amount;
+        document.getElementById("amount").value = localStorage.loan_amount;
         document.getElementById("apr").value = localStorage.loan_apr;
-        document.getElementById("anos").value = localStorage.loan_years;
-        document.getElementById("codigopostal").value = localStorage.loan_zipcode;
+        document.getElementById("years").value = localStorage.loan_years;
+        document.getElementById("zipcode").value = localStorage.loan_zipcode;
     }
 };
 
@@ -94,7 +94,7 @@ function getLeanders(amount, apr, years, zipcode) {
     // se o navegador não suportar o objeto XMLHttpRequest, não faz nada
     if (!window.XMLHttpRequest) return;
     // Localiza o elemento para exibir a lista de financeiras
-    var ad = document.getElementById("credores");
+    var ad = document.getElementById("lenders");
     if (!ad) return; // Encerra se não ha ponto de saída
     // Codifica a entrada do usuário como parâmetros de consulta em um  URL
     //dados usuário na string de consulta
@@ -128,7 +128,7 @@ function getLeanders(amount, apr, years, zipcode) {
 
 
 function chart(principal, interest, monthly, payments) {
-    var graph = document.getElementById("grafico");
+    var graph = document.getElementById("graph");
     graph.width = graph.width;
     if (arguments.length == 0 || !graph.getContext) return;
 
@@ -151,7 +151,7 @@ function chart(principal, interest, monthly, payments) {
     g.fillStyle = "#f88";
     g.fill();
     g.font = "bold 12px sans-serif"; // Define uma fonte
-    g.fillText("Pagamento Total de Juros", 20, 20); // Desenha texto na legenda
+    g.fillText("Total Interest Payments", 20, 20); // Desenha texto na legenda
 
     // O capital acumulado não é lineare e é mais complicado de representar no gráfico
     var equity = 0;
@@ -168,7 +168,7 @@ function chart(principal, interest, monthly, payments) {
     g.closePath(); // E volta para o ponto inicial
     g.fillStyle = "green"; // Agora usa tinha verde 
     g.fill(); // E preenche a área sob a curva
-    g.fillText("Patrimônio Total", 20, 35); // Rotulo em verde
+    g.fillText("Total Equity", 20, 35); // Rotulo em verde
 
     // Faz laço novamente, como acima, mas representa o saldo devedor como uma linha preta grossa no gráfico
     var bal = principal;
@@ -182,7 +182,7 @@ function chart(principal, interest, monthly, payments) {
     g.lineWidth = 3; // Usa uma linha grossa
     g.stroke(); // Desenha a curva do saldo
     g.fillStyle = "black"; // Troca para texto preto
-    g.fillText("Saldo de Empréstimos", 20, 50); // Entrada da legenda
+    g.fillText("Loan Balace", 20, 50); // Entrada da legenda
 
     // Agora faz  marcações anuis e os números de ano no eixo X
     g.textAlign = "center"; // Centraliza o texto nas marcas 

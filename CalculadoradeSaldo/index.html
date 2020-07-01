@@ -27,10 +27,9 @@
         </tr>
         <tr>
             <td>Montante do Empréstimo ($):</td>
-            <td><input id="
-                montante" onchange="calculate();"></td>
+            <td><input id="amount" onchange="calculate();"></td>
             <td rowspan="8">
-                <canvas id="grafico" width="400" height="250"></canvas>
+                <canvas id="graph" width="400" height="250"></canvas>
             </td>
         </tr>
         <tr>
@@ -39,11 +38,11 @@
         </tr>
         <tr>
             <td>Período de Reembolso(anos):</td>
-            <td><input id="anos" onchange="calculate();"></td>
+            <td><input id="years" onchange="calculate();"></td>
         </tr>
         <tr>
             <td>Código Postal (encontrar credores):</td>
-            <td><input id="codigopostal" onchange="calculate();"></td>
+            <td><input id="zipcode" onchange="calculate();"></td>
         </tr>
         <tr>
             <td>Pagamento Aproximado:</td>
@@ -51,21 +50,21 @@
         </tr>
         <tr>
             <td>Pagamento Mensal:</td>
-            <td>$<span class="resultado" id="Fpagamento"></span></td>
+            <td>$<span class="output" id="payment"></span></td>
         </tr>
         <tr>
             <td>Pagamento Total:</td>
-            <td>$<span class="resultado" id="total"></span></td>
+            <td>$<span class="output" id="total"></span></td>
         </tr>
         <tr>
             <td>Interesse Total:</td>
-            <td>$<span class="resultado" id="totalinteresados"></span></td>
+            <td>$<span class="output" id="totalinterest"></span></td>
         </tr>
         <tr>
             <th>Patrocinadores:</th>
             <td colspan="2">
                 Solicitar seu empréstimo com um desses credores finos:
-                <div id="credores"></div>
+                <div id="lenders"></div>
             </td>
         </tr>
     </table>

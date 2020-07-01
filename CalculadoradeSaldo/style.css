@@ -3,21 +3,21 @@
 
 /* Valores calculados em negrito */
 
-.output {
+.resultado {
     font-weight: bold;
 }
 
 
 /* Para elemento com id="payment" */
 
-#payment {
+#Fpagamento {
     text-decoration: underline;
 }
 
 
 /* O gráfico tem borda simples */
 
-#graph {
+#grafico {
     border: solid black 1px;
 }
 
